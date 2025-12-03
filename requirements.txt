@@ -1,0 +1,47 @@
+flask==3.0.0
+anthropic==0.40.0
+reportlab==4.0.7
+requests==2.31.0
+gunicorn==21.2.0
+Pillow==10.1.0
+python-barcode==0.15.1
+qrcode[pil]==7.4.2
+```
+
+### 1.5 Create `Procfile`
+```
+web: gunicorn app:app --bind 0.0.0.0:$PORT --workers 2 --timeout 120
+```
+
+### 1.6 Create `.gitignore`
+```
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# Environment variables
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Testing
+.pytest_cache/
